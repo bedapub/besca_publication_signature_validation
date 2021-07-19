@@ -10,7 +10,9 @@ We can do two types of analysis to address this comment.
 1. We can report the overlapping coefficients between BESCA signatures and BioQC
    signatures, which include tissue- and cell-type-specific gene signatures. We
    expect that similar cell types in bulk and single-cell annotations show high
-   correlation.
+   correlation. --> Done, producing an overlapping coefficient matrix
+   (visualized as heatmap) and a graph showing matching bulk-single-cell
+   signatures.
 2. We can use data from [Human Protein
    Atlas](https://www.proteinatlas.org/about/download) to visualize the expression
    of BESCA signatures.
