@@ -31,11 +31,14 @@ knitr::opts_chunk$set(echo = TRUE,
 library(ribiosUtils)
 library(ribiosIO)
 library(ribiosPlot)
+library(ribiosGSEA)
 library(openxlsx)
 library(tidyverse)
 library(ggplot2)
 library(httr)
 library(BioQC)
+library(ComplexHeatmap)
+library(igraph)
 theme_set(theme_light(base_size=13))
 ```
 
@@ -47,12 +50,88 @@ theme_set(theme_light(base_size=13))
 
 ## Data read in
 
+We first download the BESCA signatures from the project's repository and parse its content.
+
 ```{r bescaSignature}
 bescaGmt <- "data/20210719-BESCA-CellNames_scseqCMs6_sigs.gmt"
 if(!file.exists(bescaGmt)) {
   download.file("https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt", destfile=bescaGmt)
 }
 bescaSignature <- BioQC::readGmt(bescaGmt)
+```
+Next we parse the BioQC signatures.
+
+```{r}
+bioqcSig <- BioQC::readCurrentSignatures()
+```
+
+```{r bbOverlap, cache=TRUE}
+bescaBioQCOverlap <- sapply(bioqcSig, function(bq) {
+  sapply(bescaSignature, function(be) {
+    overlapCoefficient(be$genes, bq$genes)
+  })
+})
+```
+
+```{r}
+isBescaStrOverlap <- apply(bescaBioQCOverlap, 1, function(x) any(x>=0.5))
+isBioqcStrOverlap <- apply(bescaBioQCOverlap, 2, function(x) any(x>=0.5))
+bescaBioQCstrOverlap <- bescaBioQCOverlap[isBescaStrOverlap, isBioqcStrOverlap]
+bbCasord <- cascadeOrder(bescaBioQCstrOverlap)
+bbCasOverlap <- bescaBioQCstrOverlap[bbCasord,]
+colnames(bbCasOverlap) <- prettySigNames(colnames(bbCasOverlap))
+```
+
+```{r signatureOverlap, fig.height=12, fig.width=16}
+ComplexHeatmap::Heatmap(bbCasOverlap,
+                        name="Overlapping coefficient", 
+                        cluster_columns=FALSE, cluster_rows = FALSE,
+                        col=circlize::colorRamp2(breaks=c(0, 0.5, 1),
+                                 colors=blackyellow(3)),
+                        row_names_gp = gpar(fontsize=10),
+                        column_names_gp = gpar(fontsize=10))
+```
+
+```{r bbGraph, fig.width=12, fig.height=12}
+bbCasTops <- t(sapply(1:nrow(bbCasOverlap), function(i, top=1) {
+  rowVal <- bbCasOverlap[i,]
+  if(sum(rowVal==1)>top) {
+    top <- sum(rowVal==1)
+  }
+  ind <- order(rowVal, decreasing = TRUE)[1:top]
+  isZero <- rowVal[ind] == 0
+  ind <- ind[!isZero]
+  res <- rep(0, length(rowVal))
+  res[ind] <- rowVal[ind]
+  return(res)
+}))
+dimnames(bbCasTops) <- dimnames(bbCasOverlap)
+bbCasUsedCols <- apply(bbCasTops, 2, function(x) any(x>0))
+bbCasUsedTops <- bbCasTops[,bbCasUsedCols]
+bbGraph <- igraph::graph_from_incidence_matrix(bbCasUsedTops)
+isBescaNode <- V(bbGraph)$name %in% rownames(bbCasUsedTops)
+V(bbGraph)$color <- ifelse(isBescaNode, "orange", "lightblue")
+V(bbGraph)$font <- ifelse(isBescaNode, 2, 1)
+V(bbGraph)$size <- ifelse(isBescaNode, 9, 9)
+V(bbGraph)$label.cex <- ifelse(isBescaNode, 1.1, 0.95)
+V(bbGraph)$label.color <- ifelse(isBescaNode, "black", "navyblue")
+V(bbGraph)$label <- gsub(" \\[.*\\]", "", V(bbGraph)$name)
+E(bbGraph)$color <- "black"
+bbLayout <- layout_with_fr(bbGraph, niter=2000)
+plot(bbGraph, layout=bbLayout)
+```
+
+The graph represents (1) gene expression signatures derived from single-cell sequencing studies extracted and offered by  BESCA (orange nodes), (2) gene expression signatures derived from bulk gene-expression profiling studies performed with microarray and next-generation sequencing extracted and offered by BioQC (blue nodes), and (3) their similarities encoded in edges. For each single-cell signature in orange node, we identify the bulk signature with the highest overlapping coefficient and connect them with an edge. In case more than one bulk signatures have the maximum overlapping coefficient of 1.0, all of them are shown and connected to the respective single-cell signature. 
+
+We manually inspected the signatures. Despite different vocabularies were used in bulk and single-cell studies, most cell/tissue types match by corresponding biological entities. Examples include dendritic cell myeloid (bulk) and cDC/cDC1/cDC2 (single-cell), trachea (bulk) and cilated epithelial (single-cell), and liver and isolated hepatocytes (bulk) and hepatocytes (single-cell). They suggest that the signatures provided by BESCA and BioQC are well consistent with each other.
+
+At the same time, there are a few intriguing mismatches, for instance multipotent cord blood unrestricted somatic stem cells (bulk) and fibroblasts (single-cell), and pituitary (bulk) and enteroendocrine and ionocyte (single-cell). Multiple causes are possible, both biologically and technical. For instance, fibroblasts show heterogeneous, context-dependent expression patterns (Buechler, Matthew B., Rachana N. Pradhan, Akshay T. Krishnamurty, Christian Cox, Aslihan Karabacak Calviello, Amber W. Wang, Yeqing Angela Yang, et al. 2021. “Cross-Tissue Organization of the Fibroblast Lineage.” Nature, May, 1–5. https://doi.org/10.1038/s41586-021-03549-5.). Enteroendocrine cells are sensory cells of the gut that communicate by releasing hormones locally, which fulfils a similar endocrine function of the pituitary gland. Two genes, `CHGA` and `ASCL1`, are shared between bulk pituitary signature and single-cell ionocyte signatures and both are preferentially rexpressed by neuroendocrine cells. We failed to identify studies reporting whether they have identical or distinct biological functions in these contexts. It suggests that integrative analysis of single-cell and bulk gene expression signatures using *BESCA* and *BioQC* reveals hidden patterns that warrant further research.
+
+The code below shows intersection between single-cell signatures of ionocytes and bulk signatures of pituitary gland.
+
+```{r ionocyte_pituitary_gland_intersect}
+intersect(bescaSignature[["Ionocyte"]]$genes,
+          bioqcSig[["pituitary_gland_Fantom5_Tissue_0.7_3"]]$genes)
 ```
 
 # Acknowledgment
