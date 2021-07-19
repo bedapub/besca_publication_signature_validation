@@ -1,0 +1,68 @@
+---
+title: "Verifying BESCA signatures with bulk RNA-seq datasets"
+author: "Jitao David Zhang"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output:
+  html_document:
+    df_print: paged
+    theme: spacelab
+    mathjax: default
+    code_folding: hide
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
+editor_options: 
+  chunk_output_type: inline
+params:
+  echo: yes
+  relative: FALSE
+---
+
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.height=6, fig.width=6)
+library(ribiosUtils)
+library(ribiosIO)
+library(ribiosPlot)
+library(openxlsx)
+library(tidyverse)
+library(ggplot2)
+library(httr)
+library(BioQC)
+theme_set(theme_light(base_size=13))
+```
+
+# Background
+
+# Executive summary
+
+# Analysis
+
+## Data read in
+
+```{r bescaSignature}
+bescaGmt <- tempfile()
+download.file("https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt", destfile=bescaGmt)
+bescaSignature <- BioQC::readGmt(bescaGmt)
+```
+
+# Acknowledgment
+
+# Session information
+
+```{r bedaInfo}
+bedaInfo()
+```
+
+```{r sessionInfo}
+sessionInfo()
+```
+
+# Appendix
