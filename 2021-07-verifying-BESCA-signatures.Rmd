@@ -48,8 +48,10 @@ theme_set(theme_light(base_size=13))
 ## Data read in
 
 ```{r bescaSignature}
-bescaGmt <- tempfile()
-download.file("https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt", destfile=bescaGmt)
+bescaGmt <- "data/20210719-BESCA-CellNames_scseqCMs6_sigs.gmt"
+if(!file.exists(bescaGmt)) {
+  download.file("https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt", destfile=bescaGmt)
+}
 bescaSignature <- BioQC::readGmt(bescaGmt)
 ```
 
