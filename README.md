@@ -16,3 +16,10 @@ We can do two types of analysis to address this comment.
 2. We can use data from [Human Protein
    Atlas](https://www.proteinatlas.org/about/download) to visualize the expression
    of BESCA signatures.
+
+## Scripts to download HPA data
+
+```
+grep -v '^#' HPA.txt | grep -v '^$' | xargs wget -nd -P data
+for zip in `ls data/*.zip`; do unzip -d data $zip; done
+```

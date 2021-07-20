@@ -134,6 +134,48 @@ intersect(bescaSignature[["Ionocyte"]]$genes,
           bioqcSig[["pituitary_gland_Fantom5_Tissue_0.7_3"]]$genes)
 ```
 
+## Expression of single-cell signatures in human protein atlas.
+
+```{r}
+bescaSigHPAfile <- "data/bescaSigHPA.tsv.gz"
+if(!file.exists(bescaSigHPAfile)) {
+  consensus <- read_tsv("data/rna_consensus.tsv", col_types = "cccn") %>%
+    mutate(Subset="consensus", GeneSymbol=`Gene name`, TC=Tissue)
+  blood <- read_tsv("data/rna_blood_cell.tsv", col_types="cccnnn") %>%
+    mutate(Subset="blood", GeneSymbol=`Gene name`, TC=`Blood cell`)
+  hpasc <- read_tsv("data/rna_single_cell_type.tsv", col_types="cccn") %>%
+    mutate(Subset="single-cell", GeneSymbol=`Gene name`, TC=`Cell type`)
+  
+  bescaSigGenes <- munion(gsGenes(bescaSignature))
+  selTbl <- function(x) x %>% filter(GeneSymbol %in% bescaSigGenes) %>% dplyr::select(Subset, GeneSymbol, TC, NX)
+  bescaSigHPA <- rbind(consensus %>% selTbl,
+                       blood %>% selTbl,
+                       hpasc %>% selTbl)
+  write_tsv(bescaSigHPA, bescaSigHPAfile)
+} else {
+  bescaSigHPA <- read_tsv(bescaSigHPAfile, col_type="cccn")
+}
+bescaDf <- list2df(gsGenes(bescaSignature), col.names = c("GeneSet", "GeneSymbol"))
+bescaSigMat <- inner_join(bescaSigHPA, bescaDf, by="GeneSymbol") %>%
+  group_by(Subset, GeneSet, TC) %>%
+  summarise(MedianNX=median(NX), .groups="drop") %>%
+  longdf2matrix(., row.col="GeneSet", column.col="TC", value.col="MedianNX")
+```
+
+```{r hpaPlot, fig.height=15, fig.width=18}
+ComplexHeatmap::Heatmap(bescaSigMat,
+                        name="Normalised expression by HPA", 
+                        cluster_columns=TRUE, cluster_rows = TRUE,
+                        col=circlize::colorRamp2(breaks=c(0, 
+                                                          quantile(bescaSigHPA$NX, 0.9), 
+                                                          quantile(bescaSigHPA$NX, 0.99)),
+                                 colors=blackyellow(3)),
+                        row_names_gp = gpar(fontsize=10),
+                        column_names_gp = gpar(fontsize=10))
+```
+
+
+
 # Acknowledgment
 
 # Session information

@@ -5,3 +5,5 @@
 *.html
 *_cache
 *_files
+*.zip
+*.tsv

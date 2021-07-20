@@ -1,0 +1,7 @@
+# RNA consensus tissue gene data - HPA, GTEx, and FANTOM5
+https://www.proteinatlas.org/download/rna_tissue_consensus.tsv.zip
+# RNA single cell type data
+https://www.proteinatlas.org/download/rna_single_cell_type.tsv.zip
+# RNA HPA blood cell gene data
+https://www.proteinatlas.org/download/rna_blood_cell.tsv.zip
+
