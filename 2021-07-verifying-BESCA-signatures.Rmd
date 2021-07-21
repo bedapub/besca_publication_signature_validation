@@ -93,19 +93,11 @@ ComplexHeatmap::Heatmap(bbCasOverlap,
 ```
 
 ```{r bbGraph, fig.width=12, fig.height=12}
-bbCasTops <- t(sapply(1:nrow(bbCasOverlap), function(i, top=1) {
-  rowVal <- bbCasOverlap[i,]
-  if(sum(rowVal==1)>top) {
-    top <- sum(rowVal==1)
-  }
-  ind <- order(rowVal, decreasing = TRUE)[1:top]
-  isZero <- rowVal[ind] == 0
-  ind <- ind[!isZero]
-  res <- rep(0, length(rowVal))
-  res[ind] <- rowVal[ind]
-  return(res)
-}))
-dimnames(bbCasTops) <- dimnames(bbCasOverlap)
+source("2021-07-toribios.R")
+bbCasTops <- applyTopOrIncAndNotExclFilter(bbCasOverlap, MARGIN=1, top=1,
+                                              falseValue=0,
+                                              incFunc=function(x) x==1,
+                                              excFunc=function(x) x==0)
 bbCasUsedCols <- apply(bbCasTops, 2, function(x) any(x>0))
 bbCasUsedTops <- bbCasTops[,bbCasUsedCols]
 bbGraph <- igraph::graph_from_incidence_matrix(bbCasUsedTops)
