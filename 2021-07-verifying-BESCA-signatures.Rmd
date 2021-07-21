@@ -44,7 +44,13 @@ theme_set(theme_light(base_size=13))
 
 # Background
 
+We want to verify signatures of BESCA with bulk gene expression profiling data.
+
 # Executive summary
+
+We took two approaches to address the problem. First, we compared BESCA signatures with tissue and cell-type signatures provided by the BioQC package. Second, we examined expression of BESCA signatures in the data collection of human protein atlas.
+
+Both approaches led us to observe consistency between bulk and single-cell signatures, as well as intriguing links between tissues and cell types that may lead to new insights.
 
 # Analysis
 
