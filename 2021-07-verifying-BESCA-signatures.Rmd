@@ -195,7 +195,18 @@ bhLayout <- layout_with_fr(bhGraph, niter=2000)
 }
 ```
 
+## Exporting results
+
+```{r}
+write_gct(bbCasOverlap, "data/Besca-BioQC-signature-overlapping-coefficients.gct")
+write_gct(bbCasOverlap, "data/Besca-signature-median-NX-in-HPA.gct")
+igraph::write_graph(bbGraph, "data/Besca-BioQC-bbGraph.graphml", format="graphml")
+igraph::write_graph(bhGraph, "data/Besca-HPA-bhGraph.graphml", format="graphml")
+```
+
 # Acknowledgment
+
+I think colleagues of the BEDA team for continuous support and dicsussions.
 
 # Session information
 

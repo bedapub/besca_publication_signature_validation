@@ -1,0 +1,1873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_type" for="node" attr.name="type" attr.type="boolean"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_color" for="node" attr.name="color" attr.type="string"/>
+  <key id="v_font" for="node" attr.name="font" attr.type="double"/>
+  <key id="v_size" for="node" attr.name="size" attr.type="double"/>
+  <key id="v_label.cex" for="node" attr.name="label.cex" attr.type="double"/>
+  <key id="v_label.color" for="node" attr.name="label.color" attr.type="string"/>
+  <key id="v_label" for="node" attr.name="label" attr.type="string"/>
+  <key id="e_color" for="edge" attr.name="color" attr.type="string"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_type">false</data>
+      <data key="v_name">Adipocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Adipocyte</data>
+    </node>
+    <node id="n1">
+      <data key="v_type">false</data>
+      <data key="v_name">Neutrophil</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Neutrophil</data>
+    </node>
+    <node id="n2">
+      <data key="v_type">false</data>
+      <data key="v_name">Granulocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Granulocyte</data>
+    </node>
+    <node id="n3">
+      <data key="v_type">false</data>
+      <data key="v_name">cDC_CCR7</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">cDC_CCR7</data>
+    </node>
+    <node id="n4">
+      <data key="v_type">false</data>
+      <data key="v_name">Myofibroblast</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Myofibroblast</data>
+    </node>
+    <node id="n5">
+      <data key="v_type">false</data>
+      <data key="v_name">ImmatureEnterocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ImmatureEnterocyte</data>
+    </node>
+    <node id="n6">
+      <data key="v_type">false</data>
+      <data key="v_name">ImmatureGoblet</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ImmatureGoblet</data>
+    </node>
+    <node id="n7">
+      <data key="v_type">false</data>
+      <data key="v_name">Basal</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Basal</data>
+    </node>
+    <node id="n8">
+      <data key="v_type">false</data>
+      <data key="v_name">Erythrocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Erythrocyte</data>
+    </node>
+    <node id="n9">
+      <data key="v_type">false</data>
+      <data key="v_name">EnterocytePC</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">EnterocytePC</data>
+    </node>
+    <node id="n10">
+      <data key="v_type">false</data>
+      <data key="v_name">Hepatocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Hepatocyte</data>
+    </node>
+    <node id="n11">
+      <data key="v_type">false</data>
+      <data key="v_name">InflamFibroblast</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">InflamFibroblast</data>
+    </node>
+    <node id="n12">
+      <data key="v_type">false</data>
+      <data key="v_name">HEVEndothelial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">HEVEndothelial</data>
+    </node>
+    <node id="n13">
+      <data key="v_type">false</data>
+      <data key="v_name">T1Pneumocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">T1Pneumocyte</data>
+    </node>
+    <node id="n14">
+      <data key="v_type">false</data>
+      <data key="v_name">FollicularBcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">FollicularBcell</data>
+    </node>
+    <node id="n15">
+      <data key="v_type">false</data>
+      <data key="v_name">CD4Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD4Tcell</data>
+    </node>
+    <node id="n16">
+      <data key="v_type">false</data>
+      <data key="v_name">CD8Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD8Tcell</data>
+    </node>
+    <node id="n17">
+      <data key="v_type">false</data>
+      <data key="v_name">EntericGlial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">EntericGlial</data>
+    </node>
+    <node id="n18">
+      <data key="v_type">false</data>
+      <data key="v_name">PancreaticAcinar</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">PancreaticAcinar</data>
+    </node>
+    <node id="n19">
+      <data key="v_type">false</data>
+      <data key="v_name">PancreaticDuctal</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">PancreaticDuctal</data>
+    </node>
+    <node id="n20">
+      <data key="v_type">false</data>
+      <data key="v_name">AlphaPancreatic</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">AlphaPancreatic</data>
+    </node>
+    <node id="n21">
+      <data key="v_type">false</data>
+      <data key="v_name">Ionocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Ionocyte</data>
+    </node>
+    <node id="n22">
+      <data key="v_type">false</data>
+      <data key="v_name">Enteroendocrine</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Enteroendocrine</data>
+    </node>
+    <node id="n23">
+      <data key="v_type">false</data>
+      <data key="v_name">Paneth</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Paneth</data>
+    </node>
+    <node id="n24">
+      <data key="v_type">false</data>
+      <data key="v_name">Blymphocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Blymphocyte</data>
+    </node>
+    <node id="n25">
+      <data key="v_type">false</data>
+      <data key="v_name">CD56brightNK</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD56brightNK</data>
+    </node>
+    <node id="n26">
+      <data key="v_type">false</data>
+      <data key="v_name">EpsilonPancreatic</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">EpsilonPancreatic</data>
+    </node>
+    <node id="n27">
+      <data key="v_type">false</data>
+      <data key="v_name">Club</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Club</data>
+    </node>
+    <node id="n28">
+      <data key="v_type">false</data>
+      <data key="v_name">Hematopoietic</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Hematopoietic</data>
+    </node>
+    <node id="n29">
+      <data key="v_type">false</data>
+      <data key="v_name">Monocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Monocyte</data>
+    </node>
+    <node id="n30">
+      <data key="v_type">false</data>
+      <data key="v_name">Platelet</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Platelet</data>
+    </node>
+    <node id="n31">
+      <data key="v_type">false</data>
+      <data key="v_name">Basophil</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Basophil</data>
+    </node>
+    <node id="n32">
+      <data key="v_type">false</data>
+      <data key="v_name">cDC2</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">cDC2</data>
+    </node>
+    <node id="n33">
+      <data key="v_type">false</data>
+      <data key="v_name">cDC1</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">cDC1</data>
+    </node>
+    <node id="n34">
+      <data key="v_type">false</data>
+      <data key="v_name">cDC</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">cDC</data>
+    </node>
+    <node id="n35">
+      <data key="v_type">false</data>
+      <data key="v_name">pDC</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">pDC</data>
+    </node>
+    <node id="n36">
+      <data key="v_type">false</data>
+      <data key="v_name">Bcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Bcell</data>
+    </node>
+    <node id="n37">
+      <data key="v_type">false</data>
+      <data key="v_name">ProBcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ProBcell</data>
+    </node>
+    <node id="n38">
+      <data key="v_type">false</data>
+      <data key="v_name">CommonLymphoidPC</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CommonLymphoidPC</data>
+    </node>
+    <node id="n39">
+      <data key="v_type">false</data>
+      <data key="v_name">CD8Tcell_IL7Rmax</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD8Tcell_IL7Rmax</data>
+    </node>
+    <node id="n40">
+      <data key="v_type">false</data>
+      <data key="v_name">CD4Tcell_IL7Rmax</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD4Tcell_IL7Rmax</data>
+    </node>
+    <node id="n41">
+      <data key="v_type">false</data>
+      <data key="v_name">RegTcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">RegTcell</data>
+    </node>
+    <node id="n42">
+      <data key="v_type">false</data>
+      <data key="v_name">NClassMonocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NClassMonocyte</data>
+    </node>
+    <node id="n43">
+      <data key="v_type">false</data>
+      <data key="v_name">ClassMonocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ClassMonocyte</data>
+    </node>
+    <node id="n44">
+      <data key="v_type">false</data>
+      <data key="v_name">NKcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NKcell</data>
+    </node>
+    <node id="n45">
+      <data key="v_type">false</data>
+      <data key="v_name">CD56dimNK</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CD56dimNK</data>
+    </node>
+    <node id="n46">
+      <data key="v_type">false</data>
+      <data key="v_name">ILC1</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ILC1</data>
+    </node>
+    <node id="n47">
+      <data key="v_type">false</data>
+      <data key="v_name">CytotoxCD4Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CytotoxCD4Tcell</data>
+    </node>
+    <node id="n48">
+      <data key="v_type">false</data>
+      <data key="v_name">CytotoxCD8Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CytotoxCD8Tcell</data>
+    </node>
+    <node id="n49">
+      <data key="v_type">false</data>
+      <data key="v_name">HematoStem</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">HematoStem</data>
+    </node>
+    <node id="n50">
+      <data key="v_type">false</data>
+      <data key="v_name">Macrophage_CXCL9</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Macrophage_CXCL9</data>
+    </node>
+    <node id="n51">
+      <data key="v_type">false</data>
+      <data key="v_name">Macrophage_MSR1</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Macrophage_MSR1</data>
+    </node>
+    <node id="n52">
+      <data key="v_type">false</data>
+      <data key="v_name">IgMPlasma</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">IgMPlasma</data>
+    </node>
+    <node id="n53">
+      <data key="v_type">false</data>
+      <data key="v_name">NaiBcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NaiBcell</data>
+    </node>
+    <node id="n54">
+      <data key="v_type">false</data>
+      <data key="v_name">Plasma</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Plasma</data>
+    </node>
+    <node id="n55">
+      <data key="v_type">false</data>
+      <data key="v_name">NKTcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NKTcell</data>
+    </node>
+    <node id="n56">
+      <data key="v_type">false</data>
+      <data key="v_name">Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Tcell</data>
+    </node>
+    <node id="n57">
+      <data key="v_type">false</data>
+      <data key="v_name">NaiTcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NaiTcell</data>
+    </node>
+    <node id="n58">
+      <data key="v_type">false</data>
+      <data key="v_name">ILC2</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ILC2</data>
+    </node>
+    <node id="n59">
+      <data key="v_type">false</data>
+      <data key="v_name">NaiCD4Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NaiCD4Tcell</data>
+    </node>
+    <node id="n60">
+      <data key="v_type">false</data>
+      <data key="v_name">NaiCD8Tcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">NaiCD8Tcell</data>
+    </node>
+    <node id="n61">
+      <data key="v_type">false</data>
+      <data key="v_name">InflamMonocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">InflamMonocyte</data>
+    </node>
+    <node id="n62">
+      <data key="v_type">false</data>
+      <data key="v_name">Endothelial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Endothelial</data>
+    </node>
+    <node id="n63">
+      <data key="v_type">false</data>
+      <data key="v_name">ExhBcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ExhBcell</data>
+    </node>
+    <node id="n64">
+      <data key="v_type">false</data>
+      <data key="v_name">Macrophage</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Macrophage</data>
+    </node>
+    <node id="n65">
+      <data key="v_type">false</data>
+      <data key="v_name">Mast</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Mast</data>
+    </node>
+    <node id="n66">
+      <data key="v_type">false</data>
+      <data key="v_name">HematoMultipotentPC</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">HematoMultipotentPC</data>
+    </node>
+    <node id="n67">
+      <data key="v_type">false</data>
+      <data key="v_name">MelMelanoma</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">MelMelanoma</data>
+    </node>
+    <node id="n68">
+      <data key="v_type">false</data>
+      <data key="v_name">Fibroblast</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Fibroblast</data>
+    </node>
+    <node id="n69">
+      <data key="v_type">false</data>
+      <data key="v_name">InnateLymphoid</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">InnateLymphoid</data>
+    </node>
+    <node id="n70">
+      <data key="v_type">false</data>
+      <data key="v_name">ColorectalCancer</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ColorectalCancer</data>
+    </node>
+    <node id="n71">
+      <data key="v_type">false</data>
+      <data key="v_name">VesselEndothelial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">VesselEndothelial</data>
+    </node>
+    <node id="n72">
+      <data key="v_type">false</data>
+      <data key="v_name">Pericyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Pericyte</data>
+    </node>
+    <node id="n73">
+      <data key="v_type">false</data>
+      <data key="v_name">Mesothelial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Mesothelial</data>
+    </node>
+    <node id="n74">
+      <data key="v_type">false</data>
+      <data key="v_name">ILC3</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">ILC3</data>
+    </node>
+    <node id="n75">
+      <data key="v_type">false</data>
+      <data key="v_name">T2Pneumocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">T2Pneumocyte</data>
+    </node>
+    <node id="n76">
+      <data key="v_type">false</data>
+      <data key="v_name">Pneumocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Pneumocyte</data>
+    </node>
+    <node id="n77">
+      <data key="v_type">false</data>
+      <data key="v_name">MemBcell</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">MemBcell</data>
+    </node>
+    <node id="n78">
+      <data key="v_type">false</data>
+      <data key="v_name">Enterocyte</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">Enterocyte</data>
+    </node>
+    <node id="n79">
+      <data key="v_type">false</data>
+      <data key="v_name">IgAPlasma</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">IgAPlasma</data>
+    </node>
+    <node id="n80">
+      <data key="v_type">false</data>
+      <data key="v_name">CiliatedEpithelial</data>
+      <data key="v_color">orange</data>
+      <data key="v_font">2</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">1.1</data>
+      <data key="v_label.color">black</data>
+      <data key="v_label">CiliatedEpithelial</data>
+    </node>
+    <node id="n81">
+      <data key="v_type">true</data>
+      <data key="v_name">Adipose brown [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Adipose brown</data>
+    </node>
+    <node id="n82">
+      <data key="v_type">true</data>
+      <data key="v_name">Bone Marrow [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Bone Marrow</data>
+    </node>
+    <node id="n83">
+      <data key="v_type">true</data>
+      <data key="v_name">Cells EBV transformed lymphocytes [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Cells EBV transformed lymphocytes</data>
+    </node>
+    <node id="n84">
+      <data key="v_type">true</data>
+      <data key="v_name">Colon Sigmoid [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Colon Sigmoid</data>
+    </node>
+    <node id="n85">
+      <data key="v_type">true</data>
+      <data key="v_name">Colon Transverse [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Colon Transverse</data>
+    </node>
+    <node id="n86">
+      <data key="v_type">true</data>
+      <data key="v_name">Cornea [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Cornea</data>
+    </node>
+    <node id="n87">
+      <data key="v_type">true</data>
+      <data key="v_name">Endothelial Cells [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Endothelial Cells</data>
+    </node>
+    <node id="n88">
+      <data key="v_type">true</data>
+      <data key="v_name">Epidermis [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Epidermis</data>
+    </node>
+    <node id="n89">
+      <data key="v_type">true</data>
+      <data key="v_name">Esophagus Muscularis [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Esophagus Muscularis</data>
+    </node>
+    <node id="n90">
+      <data key="v_type">true</data>
+      <data key="v_name">Intestine Colon [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Intestine Colon</data>
+    </node>
+    <node id="n91">
+      <data key="v_type">true</data>
+      <data key="v_name">Liver [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Liver</data>
+    </node>
+    <node id="n92">
+      <data key="v_type">true</data>
+      <data key="v_name">Lung [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lung</data>
+    </node>
+    <node id="n93">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte B FOLL [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte B FOLL</data>
+    </node>
+    <node id="n94">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocytes T H [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocytes T H</data>
+    </node>
+    <node id="n95">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocytes T Thymus CD4 CD8 [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocytes T Thymus CD4 CD8</data>
+    </node>
+    <node id="n96">
+      <data key="v_type">true</data>
+      <data key="v_name">Nerve Tibial [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Nerve Tibial</data>
+    </node>
+    <node id="n97">
+      <data key="v_type">true</data>
+      <data key="v_name">Pancreas [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Pancreas</data>
+    </node>
+    <node id="n98">
+      <data key="v_type">true</data>
+      <data key="v_name">Pituitary [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Pituitary</data>
+    </node>
+    <node id="n99">
+      <data key="v_type">true</data>
+      <data key="v_name">Skin Not Sun Exposed (Suprapubic) [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Skin Not Sun Exposed (Suprapubic)</data>
+    </node>
+    <node id="n100">
+      <data key="v_type">true</data>
+      <data key="v_name">Small Intestine Terminal Ileum [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Small Intestine Terminal Ileum</data>
+    </node>
+    <node id="n101">
+      <data key="v_type">true</data>
+      <data key="v_name">Spleen [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Spleen</data>
+    </node>
+    <node id="n102">
+      <data key="v_type">true</data>
+      <data key="v_name">Stomach [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Stomach</data>
+    </node>
+    <node id="n103">
+      <data key="v_type">true</data>
+      <data key="v_name">Trachea [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Trachea</data>
+    </node>
+    <node id="n104">
+      <data key="v_type">true</data>
+      <data key="v_name">Urinary Bladder [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Urinary Bladder</data>
+    </node>
+    <node id="n105">
+      <data key="v_type">true</data>
+      <data key="v_name">Whole Blood [NR]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Whole Blood</data>
+    </node>
+    <node id="n106">
+      <data key="v_type">true</data>
+      <data key="v_name">Blood [Linsley]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Blood</data>
+    </node>
+    <node id="n107">
+      <data key="v_type">true</data>
+      <data key="v_name">Dendritic cell myeloid [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Dendritic cell myeloid</data>
+    </node>
+    <node id="n108">
+      <data key="v_type">true</data>
+      <data key="v_name">Dendritic cell plasmacytoid [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Dendritic cell plasmacytoid</data>
+    </node>
+    <node id="n109">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte B [Linsley]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte B</data>
+    </node>
+    <node id="n110">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte B [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte B</data>
+    </node>
+    <node id="n111">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte T CD4+ CD8dim [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte T CD4+ CD8dim</data>
+    </node>
+    <node id="n112">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte T CD8 PB [Linsley]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte T CD8 PB</data>
+    </node>
+    <node id="n113">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte T CD8 PB [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte T CD8 PB</data>
+    </node>
+    <node id="n114">
+      <data key="v_type">true</data>
+      <data key="v_name">Lymphocyte T Regulatory [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Lymphocyte T Regulatory</data>
+    </node>
+    <node id="n115">
+      <data key="v_type">true</data>
+      <data key="v_name">Monocyte intermediate [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Monocyte intermediate</data>
+    </node>
+    <node id="n116">
+      <data key="v_type">true</data>
+      <data key="v_name">Monocyte [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Monocyte</data>
+    </node>
+    <node id="n117">
+      <data key="v_type">true</data>
+      <data key="v_name">NK cells [Linsley]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">NK cells</data>
+    </node>
+    <node id="n118">
+      <data key="v_type">true</data>
+      <data key="v_name">NK cells [Roche]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">NK cells</data>
+    </node>
+    <node id="n119">
+      <data key="v_type">true</data>
+      <data key="v_name">cd133 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd133</data>
+    </node>
+    <node id="n120">
+      <data key="v_type">true</data>
+      <data key="v_name">cd14 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd14</data>
+    </node>
+    <node id="n121">
+      <data key="v_type">true</data>
+      <data key="v_name">cd14+ monocyte derived endothelial progenitor cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd14+ monocyte derived endothelial progenitor cells</data>
+    </node>
+    <node id="n122">
+      <data key="v_type">true</data>
+      <data key="v_name">cd19 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd19</data>
+    </node>
+    <node id="n123">
+      <data key="v_type">true</data>
+      <data key="v_name">cd34 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd34</data>
+    </node>
+    <node id="n124">
+      <data key="v_type">true</data>
+      <data key="v_name">cd4+cd25 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd4+cd25</data>
+    </node>
+    <node id="n125">
+      <data key="v_type">true</data>
+      <data key="v_name">cd4+cd25+cd45ra [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd4+cd25+cd45ra</data>
+    </node>
+    <node id="n126">
+      <data key="v_type">true</data>
+      <data key="v_name">cd4+cd25+cd45ra+ naive regulatory t cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd4+cd25+cd45ra+ naive regulatory t cells</data>
+    </node>
+    <node id="n127">
+      <data key="v_type">true</data>
+      <data key="v_name">cd8 [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">cd8</data>
+    </node>
+    <node id="n128">
+      <data key="v_type">true</data>
+      <data key="v_name">eosinophils [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">eosinophils</data>
+    </node>
+    <node id="n129">
+      <data key="v_type">true</data>
+      <data key="v_name">hepatic sinusoidal endothelial cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">hepatic sinusoidal endothelial cells</data>
+    </node>
+    <node id="n130">
+      <data key="v_type">true</data>
+      <data key="v_name">hepatocyte [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">hepatocyte</data>
+    </node>
+    <node id="n131">
+      <data key="v_type">true</data>
+      <data key="v_name">immature langerhans cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">immature langerhans cells</data>
+    </node>
+    <node id="n132">
+      <data key="v_type">true</data>
+      <data key="v_name">keratinocyte [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">keratinocyte</data>
+    </node>
+    <node id="n133">
+      <data key="v_type">true</data>
+      <data key="v_name">macrophage [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">macrophage</data>
+    </node>
+    <node id="n134">
+      <data key="v_type">true</data>
+      <data key="v_name">mast cell [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">mast cell</data>
+    </node>
+    <node id="n135">
+      <data key="v_type">true</data>
+      <data key="v_name">melanocyte [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">melanocyte</data>
+    </node>
+    <node id="n136">
+      <data key="v_type">true</data>
+      <data key="v_name">multipotent cord blood unrestricted somatic stem cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">multipotent cord blood unrestricted somatic stem cells</data>
+    </node>
+    <node id="n137">
+      <data key="v_type">true</data>
+      <data key="v_name">natural killer cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">natural killer cells</data>
+    </node>
+    <node id="n138">
+      <data key="v_type">true</data>
+      <data key="v_name">prostate epithelial cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">prostate epithelial cells</data>
+    </node>
+    <node id="n139">
+      <data key="v_type">true</data>
+      <data key="v_name">renal glomerular endothelial cells [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">renal glomerular endothelial cells</data>
+    </node>
+    <node id="n140">
+      <data key="v_type">true</data>
+      <data key="v_name">synoviocyte [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">synoviocyte</data>
+    </node>
+    <node id="n141">
+      <data key="v_type">true</data>
+      <data key="v_name">Fingernail including nail plate [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">Fingernail including nail plate</data>
+    </node>
+    <node id="n142">
+      <data key="v_type">true</data>
+      <data key="v_name">appendix [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">appendix</data>
+    </node>
+    <node id="n143">
+      <data key="v_type">true</data>
+      <data key="v_name">blood [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">blood</data>
+    </node>
+    <node id="n144">
+      <data key="v_type">true</data>
+      <data key="v_name">left ventricle [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">left ventricle</data>
+    </node>
+    <node id="n145">
+      <data key="v_type">true</data>
+      <data key="v_name">liver [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">liver</data>
+    </node>
+    <node id="n146">
+      <data key="v_type">true</data>
+      <data key="v_name">lung [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">lung</data>
+    </node>
+    <node id="n147">
+      <data key="v_type">true</data>
+      <data key="v_name">lymph node [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">lymph node</data>
+    </node>
+    <node id="n148">
+      <data key="v_type">true</data>
+      <data key="v_name">pancreas [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">pancreas</data>
+    </node>
+    <node id="n149">
+      <data key="v_type">true</data>
+      <data key="v_name">small intestine [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">small intestine</data>
+    </node>
+    <node id="n150">
+      <data key="v_type">true</data>
+      <data key="v_name">spleen [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">spleen</data>
+    </node>
+    <node id="n151">
+      <data key="v_type">true</data>
+      <data key="v_name">throat [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">throat</data>
+    </node>
+    <node id="n152">
+      <data key="v_type">true</data>
+      <data key="v_name">thymus [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">thymus</data>
+    </node>
+    <node id="n153">
+      <data key="v_type">true</data>
+      <data key="v_name">trachea [Fantom5]</data>
+      <data key="v_color">lightblue</data>
+      <data key="v_font">1</data>
+      <data key="v_size">9</data>
+      <data key="v_label.cex">0.95</data>
+      <data key="v_label.color">navyblue</data>
+      <data key="v_label">trachea</data>
+    </node>
+    <edge source="n0" target="n81">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n1" target="n82">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n1" target="n119">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n1" target="n123">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n1" target="n144">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n1" target="n151">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n2" target="n82">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n3" target="n83">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n4" target="n84">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n4" target="n89">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n4" target="n104">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n5" target="n85">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n6" target="n85">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n7" target="n86">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n7" target="n88">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n7" target="n99">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n7" target="n132">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n7" target="n141">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n8" target="n87">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n9" target="n90">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n10" target="n91">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n10" target="n130">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n10" target="n145">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n11" target="n91">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n12" target="n92">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n13" target="n92">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n14" target="n93">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n14" target="n128">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n15" target="n94">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n95">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n106">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n111">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n112">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n113">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n127">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n16" target="n152">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n17" target="n96">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n18" target="n97">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n18" target="n148">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n19" target="n97">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n20" target="n97">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n21" target="n98">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n22" target="n98">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n23" target="n100">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n24" target="n101">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n25" target="n101">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n26" target="n102">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n27" target="n103">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n28" target="n105">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n29" target="n105">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n30" target="n106">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n31" target="n106">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n32" target="n107">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n33" target="n107">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n34" target="n107">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n35" target="n108">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n36" target="n109">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n36" target="n110">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n36" target="n122">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n36" target="n142">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n36" target="n150">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n37" target="n110">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n38" target="n110">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n39" target="n113">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n40" target="n113">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n41" target="n114">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n42" target="n115">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n43" target="n116">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n44" target="n117">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n45" target="n117">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n46" target="n118">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n47" target="n118">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n48" target="n118">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n49" target="n119">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n50" target="n120">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n51" target="n121">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n52" target="n122">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n53" target="n122">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n54" target="n122">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n55" target="n124">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n56" target="n124">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n57" target="n124">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n58" target="n125">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n59" target="n126">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n60" target="n126">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n61" target="n128">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n62" target="n129">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n63" target="n131">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n64" target="n133">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n65" target="n134">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n66" target="n134">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n67" target="n135">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n68" target="n136">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n69" target="n137">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n70" target="n138">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n71" target="n139">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n72" target="n140">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n73" target="n140">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n74" target="n143">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n75" target="n146">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n76" target="n146">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n77" target="n147">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n78" target="n149">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n79" target="n149">
+      <data key="e_color">black</data>
+    </edge>
+    <edge source="n80" target="n153">
+      <data key="e_color">black</data>
+    </edge>
+  </graph>
+</graphml>
