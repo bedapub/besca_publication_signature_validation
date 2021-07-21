@@ -82,3 +82,22 @@ applyTopOrIncAndNotExclFilter <- function(matrix, MARGIN,
   dimnames(mat) <- dimnames(matrix)
   return(mat)
 }
+
+removeColumns <- function(matrix, removeFunc) {
+  vec <- apply(matrix, 2, removeFunc)
+  res <- matrix[, !vec, drop=FALSE]
+  return(res)
+}
+
+buildBescaIncidenceGraph <- function(matrix, column_node_color="lightblue", column_label_color="navyblue") {
+  graph <- igraph::graph_from_incidence_matrix(matrix)
+  isBescaNode <- V(graph)$name %in% rownames(matrix)
+  V(graph)$color <- ifelse(isBescaNode, "orange", column_node_color)
+  V(graph)$font <- ifelse(isBescaNode, 2, 1)
+  V(graph)$size <- ifelse(isBescaNode, 9, 9)
+  V(graph)$label.cex <- ifelse(isBescaNode, 1.1, 0.95)
+  V(graph)$label.color <- ifelse(isBescaNode, "black", column_label_color)
+  V(graph)$label <- gsub(" \\[.*\\]", "", V(graph)$name)
+  E(graph)$color <- "black"
+  return(graph)
+}
