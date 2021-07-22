@@ -1,6 +1,6 @@
 ---
-title: "Verifying BESCA signatures with bulk RNA-seq datasets"
-author: "Jitao David Zhang"
+title: "Supplementary Document: validating BESCA single-cell signatures"
+author: "Jitao David Zhang and the team"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
   html_document:
@@ -21,7 +21,7 @@ output:
 editor_options: 
   chunk_output_type: inline
 params:
-  echo: yes
+  echo: false
   relative: FALSE
 ---
 
@@ -42,15 +42,15 @@ library(igraph)
 theme_set(theme_light(base_size=13))
 ```
 
-# Background
+# Motivation
 
-We want to verify signatures of BESCA with bulk gene expression profiling data.
+The document describes the quality assessment of lists of genes preferentially expressed in individual cell types, referred to as *signatures* hereafter, offered by the  BESCA software package.
 
 # Executive summary
 
-We took two approaches to address the problem. First, we compared BESCA signatures with tissue and cell-type signatures provided by the BioQC package. Second, we examined expression of BESCA signatures in the data collection of human protein atlas.
+We took two approaches. First, we compared BESCA signatures with tissue and cell-type signatures provided by BioQC, which are derived from bulk expression profiles. Second, we examined expression of BESCA signatures in the data collection of human protein atlas (HPA), which include other expression compendium including GTEx and FNATOM5 as well as newly generated data by HPA.
 
-Both approaches led us to observe consistency between bulk and single-cell signatures, as well as intriguing links between tissues and cell types that may lead to new insights.
+Both approaches revealed consistency between bulk and single-cell signatures. We also observed intriguing links between tissues and cell types that may lead to new biological insights.
 
 # Analysis
 
@@ -67,9 +67,25 @@ bescaSignature <- BioQC::readGmt(bescaGmt)
 ```
 Next we parse the BioQC signatures.
 
-```{r}
+```{r bioqcSig}
 bioqcSig <- BioQC::readCurrentSignatures()
 ```
+
+```{r sigLen, fig.height=4, fig.width=4}
+bescaSigLen <- gsGeneCount(bescaSignature)
+bioqcSigLen <- gsGeneCount(bioqcSig)
+{
+  compactPar()
+  boxplot(list(BESCA=bescaSigLen, BioQC=bioqcSigLen), 
+          xlab="Signature type", ylab="Signature length")
+}
+```
+
+Notice that BESCA signatures derived from single-cell studies are much shorter than BioQC signatures derived from bulk gene expression profiles. To assess the consistency between the signatures, we calculate pairwise overlap coefficients between two types of signatures. The overlap coefficient of two sets $A$ and $B$ is defined as
+
+$$ \operatorname{overlap}(A,B) = \frac{| A \cap B | }{\min(|A|,|B|)} $$
+
+If set $A$ is a subset of $B$ (or *vice versa*), the overlap coefficient is equal to 1.
 
 ```{r bbOverlap, cache=TRUE}
 bescaBioQCOverlap <- sapply(bioqcSig, function(bq) {
@@ -79,6 +95,8 @@ bescaBioQCOverlap <- sapply(bioqcSig, function(bq) {
 })
 ```
 
+We consider either single-cell or bulk signatures that have at least one signature of the other type with the overlap coefficient equal to or larger than $0.5$.
+
 ```{r}
 isBescaStrOverlap <- apply(bescaBioQCOverlap, 1, function(x) any(x>=0.5))
 isBioqcStrOverlap <- apply(bescaBioQCOverlap, 2, function(x) any(x>=0.5))
@@ -87,6 +105,8 @@ bbCasord <- cascadeOrder(bescaBioQCstrOverlap)
 bbCasOverlap <- bescaBioQCstrOverlap[bbCasord,]
 colnames(bbCasOverlap) <- prettySigNames(colnames(bbCasOverlap))
 ```
+
+The haetmap below visualizes all pairs of signatures.
 
 ```{r signatureOverlap, fig.height=12, fig.width=16}
 ComplexHeatmap::Heatmap(bbCasOverlap,
@@ -101,6 +121,8 @@ ComplexHeatmap::Heatmap(bbCasOverlap,
                         row_names_gp = gpar(fontsize=10),
                         column_names_gp = gpar(fontsize=10))
 ```
+
+To assist visual inspection, we convert the matrix into a bipartite graph. For each single-cell signature in BESCA, we report all bulk signatures in BioQC that have either the highest, non-zero overlap coefficient among all signatures, or have the overlap coefficient equal to $1$. The bipartite graph is visualized below.
 
 ```{r bbGraph, fig.width=12, fig.height=12}
 source("2021-07-toribios.R")
@@ -117,11 +139,11 @@ bbLayout <- layout_with_fr(bbGraph, niter=2000)
 }
 ```
 
-The graph represents (1) gene expression signatures derived from single-cell sequencing studies extracted and offered by  BESCA (orange nodes), (2) gene expression signatures derived from bulk gene-expression profiling studies performed with microarray and next-generation sequencing extracted and offered by BioQC (blue nodes), and (3) their similarities encoded in edges. For each single-cell signature in orange node, we identify the bulk signature with the highest overlapping coefficient and connect them with an edge. In case more than one bulk signatures have the maximum overlapping coefficient of 1.0, all of them are shown and connected to the respective single-cell signature. 
+The graph represents (1) gene expression signatures derived from single-cell sequencing studies extracted and offered by  BESCA (orange nodes), (2) gene expression signatures derived from bulk gene-expression profiling studies performed with microarray and next-generation sequencing extracted and offered by BioQC (blue nodes), and (3) their similarities encoded in edges.
 
 We manually inspected the signatures. Despite different vocabularies were used in bulk and single-cell studies, most cell/tissue types match by corresponding biological entities. Examples include dendritic cell myeloid (bulk) and cDC/cDC1/cDC2 (single-cell), trachea (bulk) and cilated epithelial (single-cell), and liver and isolated hepatocytes (bulk) and hepatocytes (single-cell). They suggest that the signatures provided by BESCA and BioQC are well consistent with each other.
 
-At the same time, there are a few intriguing mismatches, for instance multipotent cord blood unrestricted somatic stem cells (bulk) and fibroblasts (single-cell), and pituitary (bulk) and enteroendocrine and ionocyte (single-cell). There are several biologically plausible explanations. For instance, fibroblasts show heterogeneous, context-dependent expression patterns (Buechler, Matthew B., Rachana N. Pradhan, Akshay T. Krishnamurty, Christian Cox, Aslihan Karabacak Calviello, Amber W. Wang, Yeqing Angela Yang, et al. 2021. “Cross-Tissue Organization of the Fibroblast Lineage.” Nature, May, 1–5. https://doi.org/10.1038/s41586-021-03549-5.). Enteroendocrine cells are sensory cells of the gut that communicate by releasing hormones locally, which fulfils a similar endocrine function of the pituitary gland. Two genes, `CHGA` and `ASCL1`, are shared between bulk pituitary signature and single-cell ionocyte signatures and both are preferentially rexpressed by neuroendocrine cells. We failed to identify studies reporting whether they have identical or distinct biological functions in these contexts. It suggests that integrative analysis of single-cell and bulk gene expression signatures using *BESCA* and *BioQC* reveals hidden patterns that warrant further research.
+At the same time, there are a few intriguing links, for instance multipotent cord blood unrestricted somatic stem cells (bulk) and fibroblasts (single-cell), and pituitary (bulk) and enteroendocrine and ionocyte (single-cell). Several explanations can be biologically plausible. For example, fibroblasts show heterogeneous, context-dependent expression patterns (Buechler, *et al.* [“Cross-Tissue Organization of the Fibroblast Lineage.”](https://doi.org/10.1038/s41586-021-03549-5) Nature (2021)). Enteroendocrine cells are sensory cells of the gut that communicate by releasing hormones locally, which fulfills a similar endocrine function of the pituitary gland. Two genes, `CHGA` and `ASCL1`, are shared between bulk pituitary signature and single-cell ionocyte signatures and both are preferentially expressed by neuroendocrine cells. We failed to identify studies reporting whether they have identical or distinct biological functions in these contexts. It suggests that integrative analysis of single-cell and bulk gene expression signatures using *BESCA* and *BioQC* reveals hidden patterns that warrant further research.
 
 The code below shows intersection between single-cell signatures of ionocytes and bulk signatures of pituitary gland.
 
@@ -130,9 +152,11 @@ intersect(bescaSignature[["Ionocyte"]]$genes,
           bioqcSig[["pituitary_gland_Fantom5_Tissue_0.7_3"]]$genes)
 ```
 
-## Expression of single-cell signatures in human protein atlas.
+## Expression of single-cell signatures in Human Protein Atlas.
 
-```{r}
+Besides checking consistency of single-cell and bulk signatures, we also directly examined expression of single-cell signatures in bulk and single-cell studies deposited in publicly available gene expression compendia. For this purpose, we used consensus expression data, the Blood Atlas, and the single-cell expression data collected by the Human Protein Atlas (HPA) project.
+
+```{r hpaParse}
 bescaSigHPAfile <- "data/bescaSigHPA.tsv.gz"
 if(!file.exists(bescaSigHPAfile)) {
   consensus <- read_tsv("data/rna_consensus.tsv", col_types = "cccn") %>%
@@ -168,6 +192,8 @@ bescaSigMatAnno <- ComplexHeatmap::HeatmapAnnotation(Subset=factor(hpaSubset),
                                                      annotation_name_side = "right")
 ```
 
+The heatmap belwo shows the expression of BESCA signatures in HPA. Each signature is represented by the median *consensus, normalized expression* (*NX*) of its genes. HPA datasets are colored by the subset.
+
 ```{r hpaPlot, fig.height=15, fig.width=18}
 ComplexHeatmap::Heatmap(bescaSigMatOrdered,
                         top_annotation = bescaSigMatAnno,
@@ -185,6 +211,8 @@ ComplexHeatmap::Heatmap(bescaSigMatOrdered,
                         column_names_gp = gpar(fontsize=10))
 ```
 
+Similar to what we did for the comparison between BESCA and BioQC signatures, we build a bipartite graph of BESCA signatures and HPA tissue and cell types. For each single-cell signature in BESCA, we report all HPA tissue and cell types that have the highest, non-zero NX.
+
 ```{r bhGraph, fig.width=15, fig.height=15}
 hpaCol <- "#f4ebd0" ## cream
 bhTops <- applyTopOrIncAndNotExclFilter(bescaSigMatOrdered, MARGIN=1, top=1,
@@ -201,7 +229,11 @@ bhLayout <- layout_with_fr(bhGraph, niter=2000)
 }
 ```
 
+We inspected the graph manually and found good consistency between BESCA signatures and HPA tissue and cell types. Similar to the comparison of BESCA and BioQC signatures, we found some intriguing links that deserve further interpretation and research.
+
 ## Exporting results
+
+We export the matrices and graphs so that other visualization and analysis methods can be applied to them.
 
 ```{r}
 write_gct(bbCasOverlap, "data/Besca-BioQC-signature-overlapping-coefficients.gct")
@@ -209,6 +241,10 @@ write_gct(bbCasOverlap, "data/Besca-signature-median-NX-in-HPA.gct")
 igraph::write_graph(bbGraph, "data/Besca-BioQC-bbGraph.graphml", format="graphml")
 igraph::write_graph(bhGraph, "data/Besca-HPA-bhGraph.graphml", format="graphml")
 ```
+
+# Conclusions
+
+We observe considerable consistency between single-cell signatures provided by BESCA and existing data and knowledge of tissue- and cell-type-specific gene expression.
 
 # Acknowledgment
 
@@ -223,5 +259,3 @@ bedaInfo()
 ```{r sessionInfo}
 sessionInfo()
 ```
-
-# Appendix
