@@ -1,8 +1,12 @@
 ---
 title: "Supplementary Document: validating BESCA single-cell signatures"
-author: "Jitao David Zhang and the team"
+author: "Jitao David Zhang on behalf of the team"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
 output:
+  pdf_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 3
   html_document:
     df_print: paged
     theme: spacelab
@@ -14,10 +18,6 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-  pdf_document:
-    number_sections: yes
-    toc: yes
-    toc_depth: 3
 editor_options: 
   chunk_output_type: inline
 params:
@@ -54,14 +54,15 @@ Both approaches revealed consistency between bulk and single-cell signatures. We
 
 # Analysis
 
-## Data read in
+## Comparing BESCA and BioQC signatures
 
 We first download the BESCA signatures from the project's repository and parse its content.
 
 ```{r bescaSignature}
 bescaGmt <- "data/20210719-BESCA-CellNames_scseqCMs6_sigs.gmt"
 if(!file.exists(bescaGmt)) {
-  download.file("https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt", destfile=bescaGmt)
+  url <- "https://raw.githubusercontent.com/bedapub/besca/master/besca/datasets/genesets/CellNames_scseqCMs6_sigs.gmt"
+  download.file(url, destfile=bescaGmt)
 }
 bescaSignature <- BioQC::readGmt(bescaGmt)
 ```
@@ -114,7 +115,8 @@ ComplexHeatmap::Heatmap(bbCasOverlap,
                         cluster_columns=FALSE, cluster_rows = FALSE,
                         col=circlize::colorRamp2(breaks=c(0, 0.5, 1),
                                  colors=blackyellow(3)),
-                        column_title = "BioQC signatures derived from bulk expression profiling of tissues and cell types",
+                        column_title = paste("BioQC signatures derived from",
+                        "bulk expression profiling of tissues and cell types"),
                         row_title = "BESCA signatures derived from single-cell studies",
                         column_title_side = "bottom", column_title_gp = gpar(fontsize=20),
                         row_title_side = "right", row_title_gp = gpar(fontsize=20),
@@ -135,7 +137,8 @@ bbGraph <- buildBescaIncidenceGraph(bbCasUsedTops)
 bbLayout <- layout_with_fr(bbGraph, niter=2000)
 {
   plot(bbGraph, layout=bbLayout)
-  legend('topleft',legend=c("BESCA", "BioQC"), pch=21, pt.bg=c("orange", "lightblue"), cex=1.2, pt.cex=2.5)
+  legend('topleft',legend=c("BESCA", "BioQC"), pch=21, pt.bg=c("orange", "lightblue"), 
+         cex=1.2, pt.cex=2.5)
 }
 ```
 
@@ -167,7 +170,8 @@ if(!file.exists(bescaSigHPAfile)) {
     mutate(Subset="single-cell", GeneSymbol=`Gene name`, TC=`Cell type`)
   
   bescaSigGenes <- munion(gsGenes(bescaSignature))
-  selTbl <- function(x) x %>% filter(GeneSymbol %in% bescaSigGenes) %>% dplyr::select(Subset, GeneSymbol, TC, NX)
+  selTbl <- function(x) x %>% filter(GeneSymbol %in% bescaSigGenes) %>% 
+    dplyr::select(Subset, GeneSymbol, TC, NX)
   bescaSigHPA <- rbind(consensus %>% selTbl,
                        blood %>% selTbl,
                        hpasc %>% selTbl)
@@ -184,7 +188,7 @@ bescaSigMatOrd <- cascadeOrder(bescaSigMat)
 bescaSigMatOrdered <- bescaSigMat[bescaSigMatOrd, ]
 hpaSubset <- matchColumn(colnames(bescaSigMat), bescaSigHPA, "TC")$Subset
 hpaSubsetCol <- RColorBrewer::brewer.pal(3, "Set1")
-bescaSigMatAnno <- ComplexHeatmap::HeatmapAnnotation(Subset=factor(hpaSubset),
+bescaSigMatAnno <- HeatmapAnnotation(Subset=factor(hpaSubset),
                                                      col = list(Subset=c("consensus"=hpaSubsetCol[1],
                                                                 "blood"=hpaSubsetCol[2],
                                                                 "single-cell"=hpaSubsetCol[3])),
@@ -225,7 +229,8 @@ bhGraph <- buildBescaIncidenceGraph(bhUsedTops,
 bhLayout <- layout_with_fr(bhGraph, niter=2000)
 {
   plot(bhGraph, layout=bhLayout)
-  legend('topleft',legend=c("BESCA", "HPA"), pch=21, pt.bg=c("orange", hpaCol), cex=1.5, pt.cex=3)
+  legend('topleft',legend=c("BESCA", "HPA"), pch=21, pt.bg=c("orange", hpaCol), 
+         cex=1.5, pt.cex=3)
 }
 ```
 
